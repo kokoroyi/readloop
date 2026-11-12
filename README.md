@@ -5,6 +5,7 @@
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D6?logo=windows)
 ![Node](https://img.shields.io/badge/Node.js-%E2%89%A520.19-339933?logo=node.js)
 ![Vue](https://img.shields.io/badge/Vue-3-42B883?logo=vue.js)
+![CI](https://github.com/kokoroyi/readloop/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-8a5a3b)
 
 ![ReadLoop 精读界面](docs/screenshots/reading.png)
@@ -129,4 +130,5 @@ E2E 的词典依赖：把 ECDICT 的 `stardict.db` 复制到 `dev-data/e2e/stard
 ## License
 
 [MIT](LICENSE) © 2026 kokoroyi
+
 
