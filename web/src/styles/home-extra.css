@@ -1,0 +1,259 @@
+/**
+ * M5 阅读台·统计卡 / 随机回顾 / 空态 / 骨架与错误样式。
+ */
+
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+.stat-cell {
+  padding: var(--space-4) var(--space-3);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius-md);
+  background: var(--paper-surface-2);
+  text-align: center;
+}
+
+.stat-value {
+  font-family: var(--font-serif);
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  color: var(--paper-ink);
+  white-space: nowrap;
+}
+
+.stat-value small {
+  margin-left: 2px;
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--paper-ink-3);
+}
+
+.stat-label {
+  margin-top: var(--space-1);
+  font-size: var(--text-2xs);
+  color: var(--paper-ink-3);
+}
+
+/* 随机回顾 */
+.home-random {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.random-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: var(--paper-accent-soft);
+  color: var(--paper-accent);
+}
+
+.random-main {
+  min-width: 0;
+}
+
+.random-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--paper-ink);
+}
+
+.random-desc {
+  margin-top: 2px;
+  font-size: var(--text-sm);
+  color: var(--paper-ink-3);
+}
+
+.home-random .btn {
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+
+/* 空态 */
+.home-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-16) var(--space-12);
+}
+
+.home-empty-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-lg);
+  background: var(--paper-accent-soft);
+  color: var(--paper-accent);
+}
+
+.home-empty-title {
+  margin-top: var(--space-6);
+  font-family: var(--font-serif);
+  font-size: var(--text-6xl);
+  font-weight: 700;
+  color: var(--paper-ink);
+}
+
+.home-empty-text {
+  margin: var(--space-4) 0 var(--space-8);
+  font-size: var(--text-lg);
+  color: var(--paper-ink-3);
+  line-height: var(--leading-relaxed);
+  max-width: 440px;
+}
+
+.home-loading {
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  gap: var(--space-6);
+}
+
+.home-loading-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-8);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius-lg);
+  background: var(--paper-surface);
+}
+
+.home-error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.home-error .btn {
+  margin-left: auto;
+}
+
+@media (max-width: 1100px) {
+  .home-grid,
+  .home-loading {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-continue {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .continue-side {
+    flex-direction: row;
+    border-left: none;
+    border-top: 1px dashed var(--paper-line-2);
+    padding: var(--space-5) 0 0;
+  }
+}
+
+.queue-list {
+  position: relative;
+}
+
+.queue-handle {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 3px 2px;
+  border: none;
+  border-radius: 3px;
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+}
+
+.queue-handle i {
+  display: block;
+  width: 10px;
+  height: 1px;
+  background: var(--paper-ink-3);
+}
+
+.queue-handle:hover {
+  background: var(--paper-line);
+}
+
+.queue-handle:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 1px;
+}
+
+.queue-handle.is-disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.queue-item.is-dragging {
+  opacity: 0.35;
+  background: var(--paper-surface-2);
+}
+
+.queue-list.is-dragging .queue-item {
+  cursor: grabbing;
+}
+
+.queue-drop-line {
+  position: absolute;
+  left: var(--space-3);
+  right: var(--space-3);
+  height: 2px;
+  border-radius: 2px;
+  background: var(--paper-accent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.queue-saving {
+  font-size: var(--text-sm);
+  color: var(--paper-accent);
+}
+
+.home-queue.is-saving .queue-item {
+  opacity: 0.7;
+}
+
+body.is-queue-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.queue-drag-ghost {
+  position: fixed;
+  z-index: var(--z-toast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: 340px;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--paper-accent-2);
+  border-radius: var(--radius-md);
+  background: var(--paper-surface);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  color: var(--paper-ink);
+  opacity: 0.96;
+  pointer-events: none;
+}
+
+.queue-drag-grip {
+  color: var(--paper-ink-3);
+  font-size: var(--text-sm);
+}
+
+.queue-drag-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

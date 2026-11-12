@@ -1,0 +1,64 @@
+/**
+ * ADHD 阅读增强 token 样式：Bionic 三段渐变、语义加粗、语义高亮、收藏词虚线。
+ * 参数通过 documentElement 上的 CSS 变量驱动（见 applyAppearance）。
+ * 只作用于句子正文（.adhd-text），不影响批注、输入行与表格。
+ */
+
+.adhd-text {
+  letter-spacing: var(--adhd-letter-spacing, 0.04em);
+  word-spacing: var(--adhd-word-spacing, 0.1em);
+}
+
+.adhd-word {
+  color: inherit;
+}
+
+/* 收藏词虚线（任意模式下都保留，可选中/划词） */
+.adhd-word.is-favorite {
+  border-bottom: 1.5px dashed var(--paper-accent-2);
+}
+
+/* Bionic：lead 加粗 → mid 同字重降透明度 → tail 更低透明度 */
+.bionic-word .bionic-lead {
+  font-weight: var(--adhd-emphasis-weight, 700);
+  font-size: calc(1em * var(--adhd-bionic-lead-scale, 1));
+}
+
+.bionic-word .bionic-mid {
+  font-weight: var(--adhd-emphasis-weight, 700);
+  opacity: var(--adhd-mid-opacity, 0.65);
+}
+
+.bionic-word .bionic-tail {
+  opacity: var(--adhd-tail-opacity, 0.45);
+}
+
+/* 语义加粗：基础强调=加粗；加强=更粗 + 轻微放大 + 强调色 */
+.semantic-word.is-base {
+  font-weight: var(--adhd-semantic-weight, 600);
+}
+
+.semantic-word.is-amplify {
+  font-weight: var(--adhd-emphasis-weight, 760);
+  font-size: calc(1em * var(--adhd-emphasis-scale, 1));
+  color: var(--adhd-sem-color);
+}
+
+/* 语义高亮：基础=暖色底；加强=更深底色 + 深色文字 */
+.highlight-word {
+  padding: 0 1px;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.highlight-word.is-base {
+  background: var(--adhd-highlight-bg);
+  color: inherit;
+}
+
+.highlight-word.is-amplify {
+  background: var(--adhd-highlight-strong-bg);
+  color: var(--adhd-highlight-strong-ink);
+  font-weight: 600;
+}

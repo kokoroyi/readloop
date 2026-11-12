@@ -1,0 +1,150 @@
+/**
+ * M5 阅读台·活跃日历样式。
+ */
+
+.cal-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.cal-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--paper-ink-2);
+}
+
+.cal-nav {
+  margin-left: auto;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.cal-nav .icon-btn {
+  width: 26px;
+  height: 26px;
+}
+
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: var(--space-2);
+}
+
+.cal-weekdays span {
+  text-align: center;
+  font-size: var(--text-2xs);
+  color: var(--paper-ink-3);
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.cal-day {
+  aspect-ratio: 1.35;
+  display: grid;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  color: var(--paper-ink-2);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+
+.cal-day:disabled {
+  cursor: default;
+  color: var(--paper-line-2);
+}
+
+.cal-day.is-outside {
+  opacity: 0.25;
+}
+
+.cal-day.is-today {
+  border-color: var(--paper-accent);
+}
+
+.cal-day.is-selected {
+  outline: 2px solid var(--paper-accent-2);
+  outline-offset: 1px;
+}
+
+.cal-day:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 1px;
+}
+
+.cal-level-0 {
+  background: transparent;
+}
+
+.cal-level-1 {
+  background: var(--paper-amber-soft);
+}
+
+.cal-level-2 {
+  background: var(--paper-accent-soft);
+}
+
+.cal-level-3 {
+  background: var(--paper-amber);
+  color: var(--paper-surface);
+}
+
+.cal-level-4 {
+  background: var(--paper-accent);
+  color: var(--paper-surface);
+}
+
+.cal-foot {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cal-legend {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: var(--text-2xs);
+  color: var(--paper-ink-3);
+}
+
+.cal-legend .cal-level-0,
+.cal-legend span:not(.cal-legend-cell) {
+  width: auto;
+}
+
+.cal-legend-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.cal-legend span:first-child {
+  margin-right: var(--space-1);
+}
+
+.cal-legend span:last-child {
+  margin-left: var(--space-1);
+}
+
+.cal-detail {
+  margin: 0;
+  font-size: var(--text-2xs);
+  color: var(--paper-ink-2);
+  min-height: 16px;
+}
+
+.cal-detail-hint {
+  color: var(--paper-ink-3);
+}

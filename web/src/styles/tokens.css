@@ -1,0 +1,221 @@
+/*
+ * ReadLoop 纸感设计令牌。
+ * 本文件是唯一允许出现字面色值的文件；其余样式一律引用变量。
+ * 基线来源：docs/mockups/tokens.css，深色取值对齐 docs/mockups/reading-b-dark.html。
+ */
+
+:root {
+  color-scheme: light;
+
+  /* ---------- 纸面 ---------- */
+  --paper-bg: #f6f1e7;
+  --paper-bg-2: #f1eadc;
+  --paper-surface: #fffdf7;
+  --paper-surface-2: #fbf6ec;
+  --paper-ink: #2a2520;
+  --paper-ink-2: #5b5348;
+  --paper-ink-3: #8b8073;
+  --paper-line: #e6dccb;
+  --paper-line-2: #d9cdb8;
+
+  /* ---------- 强调色 ---------- */
+  --paper-accent: #8a5a3b;
+  --paper-accent-2: #a87452;
+  --paper-accent-soft: #efe3d2;
+  --paper-accent-soft-hover: #e8d9c4;
+
+  /* ---------- 语义色 ---------- */
+  --paper-amber: #a87418;
+  --paper-amber-soft: #f5e8c8;
+  --paper-amber-strong: #7c5a12;
+  --paper-green: #4f7a5f;
+  --paper-green-soft: #e6efe6;
+  --paper-rust: #a8532f;
+  --paper-rust-soft: #f4e4dc;
+  --paper-rust-hover: #93452a;
+  --paper-blue-gray: #5c6b73;
+  --paper-blue-gray-soft: #e8edee;
+
+  /* ---------- 组件语义令牌 ---------- */
+  --brand-mark-bg: var(--paper-ink);
+  --brand-mark-fg: #f7f1e4;
+  --topbar-bg: rgba(255, 253, 247, 0.82);
+  --overlay-bg: rgba(48, 40, 28, 0.34);
+  --focus-ring: var(--paper-accent);
+  --input-focus-shadow: 0 0 0 3px rgba(138, 90, 59, 0.12);
+  --btn-primary-bg: var(--paper-ink);
+  --btn-primary-bg-hover: #3a332b;
+  --btn-primary-fg: #fbf6ec;
+  --btn-danger-bg: var(--paper-rust);
+  --btn-danger-bg-hover: var(--paper-rust-hover);
+  --btn-danger-fg: #fff8ec;
+  --scrollbar-thumb: var(--paper-line-2);
+  --scrollbar-track: transparent;
+  --selection-bg: var(--paper-amber-soft);
+  --toast-bg: var(--paper-ink);
+  --toast-fg: var(--paper-bg);
+  --toast-danger-bg: var(--paper-rust);
+  --toast-danger-fg: #fff8ec;
+  --reading-highlight: #fbf3e1;
+  --reading-note-bar: var(--paper-amber);
+  --reading-mark-bg: var(--paper-amber-soft);
+  --reading-mark-ink: var(--paper-amber-strong);
+  --adhd-sem-color: var(--paper-accent);
+  --adhd-sem-strong-color: var(--paper-rust);
+  --adhd-highlight-bg: #f5e8c8;
+  --adhd-highlight-strong-bg: #ecd39c;
+  --adhd-highlight-strong-ink: #5c4310;
+
+  /* ---------- 纸面纹理（CSS 渐变，无图片资源） ---------- */
+  --body-bg-image:
+    radial-gradient(1100px 640px at 10% -12%, rgba(255, 255, 255, 0.55), transparent 62%),
+    radial-gradient(900px 520px at 102% -4%, rgba(255, 255, 255, 0.38), transparent 58%),
+    linear-gradient(180deg, rgba(120, 90, 50, 0.018), rgba(120, 90, 50, 0.018));
+
+  /* ---------- 圆角 ---------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+
+  /* ---------- 字体 ---------- */
+  --font-ui: "Segoe UI", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  --font-serif: Georgia, "Times New Roman", "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+  --font-mono: "Cascadia Code", "Consolas", "Courier New", monospace;
+
+  --text-3xs: 10px;
+  --text-2xs: 10.5px;
+  --text-xs: 11px;
+  --text-sm: 11.5px;
+  --text-base: 12px;
+  --text-md: 12.5px;
+  --text-lg: 13px;
+  --text-xl: 13.5px;
+  --text-2xl: 14px;
+  --text-3xl: 15px;
+  --text-4xl: 16px;
+  --text-5xl: 18.5px;
+  --text-6xl: 21px;
+  --text-7xl: 26px;
+  --text-stat: 22px;
+
+  --leading-none: 1;
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-reading: 1.75;
+
+  /* ---------- 间距 ---------- */
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 6px;
+  --space-4: 8px;
+  --space-5: 10px;
+  --space-6: 12px;
+  --space-7: 14px;
+  --space-8: 16px;
+  --space-9: 18px;
+  --space-10: 20px;
+  --space-11: 22px;
+  --space-12: 24px;
+  --space-13: 26px;
+  --space-14: 28px;
+  --space-15: 32px;
+  --space-16: 40px;
+
+  /* ---------- 阴影 ---------- */
+  --shadow-sm: 0 1px 2px rgba(60, 48, 30, 0.06);
+  --shadow-md: 0 10px 30px rgba(60, 48, 30, 0.1);
+  --shadow-pop: 0 18px 48px rgba(45, 36, 22, 0.18);
+
+  /* ---------- 阅读排版（设置页实时写入覆盖） ---------- */
+  --reading-font: var(--font-serif);
+  --reading-font-size: 19px;
+  --reading-line-height: 1.9;
+  --reading-width: 720px;
+
+  /* ---------- 动效 ---------- */
+  --dur-fast: 120ms;
+  --dur-mid: 160ms;
+  --dur-slow: 180ms;
+  --ease: ease-out;
+
+  /* ---------- 层级 ---------- */
+  --z-topbar: 20;
+  --z-float: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --z-toast: 80;
+  --z-tip: 90;
+
+  /* ---------- 壳尺寸 ---------- */
+  --topbar-h: 62px;
+}
+
+/* ============ 深色纸：深灰底 + 米色字，低对比 ============ */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --paper-bg: #17151a;
+  --paper-bg-2: #1d1a1f;
+  --paper-surface: #211e24;
+  --paper-surface-2: #272329;
+  --paper-ink: #e9e2d4;
+  --paper-ink-2: #c3b9a8;
+  --paper-ink-3: #8f8577;
+  --paper-line: #3a3437;
+  --paper-line-2: #4a4246;
+
+  --paper-accent: #c9946a;
+  --paper-accent-2: #d8a67c;
+  --paper-accent-soft: #3a2f28;
+  --paper-accent-soft-hover: #46382f;
+
+  --paper-amber: #d8a94e;
+  --paper-amber-soft: #3d3323;
+  --paper-amber-strong: #e8c170;
+  --paper-green: #8fbf9b;
+  --paper-green-soft: #24312a;
+  --paper-rust: #d98a68;
+  --paper-rust-soft: #3a2a24;
+  --paper-rust-hover: #e5a184;
+  --paper-blue-gray: #94a3aa;
+  --paper-blue-gray-soft: #263035;
+
+  --brand-mark-bg: var(--paper-accent);
+  --brand-mark-fg: #1b1712;
+  --topbar-bg: rgba(30, 27, 32, 0.88);
+  --overlay-bg: rgba(8, 7, 9, 0.62);
+  --focus-ring: var(--paper-accent-2);
+  --input-focus-shadow: 0 0 0 3px rgba(216, 166, 124, 0.16);
+  --btn-primary-bg: var(--paper-accent);
+  --btn-primary-bg-hover: var(--paper-accent-2);
+  --btn-primary-fg: #1b1712;
+  --btn-danger-bg: var(--paper-rust);
+  --btn-danger-bg-hover: var(--paper-rust-hover);
+  --btn-danger-fg: #1b1712;
+  --scrollbar-thumb: var(--paper-line-2);
+  --selection-bg: var(--paper-accent-soft);
+  --toast-bg: var(--paper-ink);
+  --toast-fg: var(--paper-bg);
+  --toast-danger-bg: var(--paper-rust);
+  --toast-danger-fg: #1b1712;
+  --reading-highlight: #2c2721;
+  --reading-note-bar: var(--paper-amber);
+  --reading-mark-bg: #4a3c26;
+  --reading-mark-ink: #e8c170;
+  --adhd-sem-color: #e0b183;
+  --adhd-sem-strong-color: #f0c79a;
+  --adhd-highlight-bg: #3d3323;
+  --adhd-highlight-strong-bg: #55452b;
+  --adhd-highlight-strong-ink: #f3d9a4;
+
+  --body-bg-image:
+    radial-gradient(1100px 640px at 10% -12%, rgba(255, 240, 220, 0.05), transparent 62%),
+    radial-gradient(900px 520px at 102% -4%, rgba(255, 240, 220, 0.04), transparent 58%);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-pop: 0 18px 48px rgba(0, 0, 0, 0.55);
+}

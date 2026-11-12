@@ -1,0 +1,8 @@
+node_modules/
+server/public/
+tray/*.exe
+docs/
+test-results/
+playwright-report/
+package-lock.json
+*.md

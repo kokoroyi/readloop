@@ -1,0 +1,185 @@
+/**
+ * M4 复盘自由提问区样式（气泡/流式/输入）。
+ */
+
+/* ================= 自由提问 ================= */
+.recap-chat {
+  margin-top: var(--space-8);
+  padding: var(--space-7) var(--space-8);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius-lg);
+  background: var(--paper-surface);
+}
+
+.recap-chat-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.recap-chat-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--paper-ink);
+}
+
+.recap-chat-tip {
+  font-size: var(--text-sm);
+  color: var(--paper-ink-3);
+}
+
+.recap-chat-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  flex: 0 0 auto;
+  min-height: 140px;
+  overflow-y: auto;
+  padding-right: var(--space-2);
+}
+
+.recap-bubble {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.recap-bubble.user {
+  align-self: flex-end;
+  max-width: 86%;
+  background: var(--paper-accent-soft);
+  color: var(--paper-accent);
+}
+
+.recap-bubble.assistant {
+  background: var(--paper-surface-2);
+  border: 1px solid var(--paper-line);
+  color: var(--paper-ink-2);
+}
+
+.recap-bubble-role {
+  margin-bottom: var(--space-1);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
+.recap-bubble-text {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.recap-caret {
+  display: inline-block;
+  width: 6px;
+  height: 13px;
+  margin-left: 2px;
+  border-radius: 1px;
+  background: var(--paper-accent);
+  animation: chat-blink 1s step-end infinite;
+  vertical-align: -2px;
+}
+
+.recap-partial {
+  font-size: var(--text-2xs);
+  color: var(--paper-rust);
+}
+
+.recap-chat-empty {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--paper-ink-3);
+}
+
+.recap-chat-error {
+  margin-top: var(--space-4);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.recap-chat-error span {
+  flex: 1;
+  min-width: 140px;
+}
+
+.recap-chat-input-row {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.recap-chat-input {
+  flex: 1;
+  min-width: 0;
+  min-height: 34px;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--paper-line-2);
+  border-radius: var(--radius-sm);
+  background: var(--paper-surface);
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--paper-ink);
+  resize: none;
+  overflow-y: hidden;
+}
+
+/* 消息区与输入之间的拖拽手柄 */
+.recap-chat-resizer {
+  display: grid;
+  place-items: center;
+  height: 16px;
+  margin: var(--space-2) 0 var(--space-1);
+  cursor: row-resize;
+  touch-action: none;
+  border-radius: var(--radius-sm);
+}
+
+.recap-chat-resizer:hover {
+  background: var(--paper-surface-2);
+}
+
+.recap-chat-resizer:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 1px;
+}
+
+.recap-chat-resizer-grip {
+  width: 38px;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--paper-line-2);
+}
+
+.recap-chat-resizer:hover .recap-chat-resizer-grip,
+.recap-chat-resizer:focus-visible .recap-chat-resizer-grip {
+  background: var(--paper-accent-2);
+}
+
+body.is-chat-resizing {
+  cursor: row-resize;
+  user-select: none;
+}
+
+.recap-chat-input:focus {
+  outline: none;
+  border-color: var(--paper-accent-2);
+  box-shadow: var(--input-focus-shadow);
+}
+
+.recap-chat-input::placeholder {
+  color: var(--paper-ink-3);
+}
+
+.recap-chat-readonly {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-sm);
+  color: var(--paper-ink-3);
+}

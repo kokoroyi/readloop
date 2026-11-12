@@ -1,0 +1,35 @@
+# 依赖与构建产物
+node_modules/
+server/public/
+dist/
+
+# 托盘编译产物
+tray/*.exe
+tray/*.pdb
+
+# 测试与调试产物
+test-results/
+playwright-report/
+.playwright/
+dev-data/
+*.log
+logs/
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 本地敏感备份
+*.db
+*.db-wal
+*.db-shm
+
+# setup.bat 生成
+/README-FIRST.txt
+.env
+.env.*
+.shot-data/
+stardict.db
+data/

@@ -1,0 +1,120 @@
+/**
+ * M1 AI 配置分区样式（自 AiConfigSection scoped 迁出，M5 统一维护）。
+ */
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-7);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--paper-ink);
+}
+
+.section-desc {
+  font-size: var(--text-sm);
+  color: var(--paper-ink-3);
+}
+
+.key-input {
+  letter-spacing: 0.04em;
+}
+
+.unit-input {
+  padding-right: 56px;
+}
+
+.inline-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.inline-row .input {
+  flex: 1;
+  min-width: 0;
+}
+
+.fetch-btn {
+  flex: 0 0 auto;
+  height: 38px;
+}
+
+.model-picks {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.model-picks-label {
+  font-size: var(--text-sm);
+  color: var(--paper-ink-3);
+}
+
+.model-pick {
+  height: 26px;
+  padding: 0 var(--space-6);
+  border: 1px solid var(--paper-line-2);
+  border-radius: var(--radius-pill);
+  background: var(--paper-surface);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--paper-ink-2);
+  cursor: pointer;
+  transition:
+    background var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
+}
+
+.model-pick:hover {
+  border-color: var(--paper-accent);
+  color: var(--paper-ink);
+}
+
+.model-pick.active {
+  border-color: var(--paper-accent);
+  background: var(--paper-accent-soft);
+  color: var(--paper-ink);
+  font-weight: 600;
+}
+
+.model-hint {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--paper-ink-3);
+  line-height: var(--leading-relaxed);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-3);
+}
+
+.actions-hint {
+  margin-left: auto;
+  font-size: var(--text-sm);
+  color: var(--paper-ink-3);
+}
+
+@media (max-width: 720px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
